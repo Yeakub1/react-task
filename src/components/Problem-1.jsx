@@ -20,7 +20,7 @@ const Problem1 = () => {
     setList(newList);
     setTemp(newList);
   };
-//   console.log("temp  ", temp);
+
   useEffect(() => {
     if (show === "active") {
       const newTemp = temp.filter((item) => item.status === "active");
@@ -28,15 +28,15 @@ const Problem1 = () => {
     } else if (show === "all") {
       let newTemp = temp.filter((item) => item.status === "active");
       let newLists = newTemp;
-    //   console.log("acibe ", newLists);
+
       newTemp = temp.filter((item) => item.status === "completed");
       newLists = [...newLists, ...newTemp];
-    //   console.log("complete", newLists);
+  
       newTemp = temp.filter(
         (item) => item.status !== "active" && item.status !== "completed"
       );
       newLists = [...newLists, ...newTemp];
-    //   console.log("after", newLists);
+
       setList(newLists);
     } else if (show === "completed") {
       const newTemp = temp.filter((item) => item.status === "completed");
